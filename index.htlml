@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Créations 3D | Objets imprimés en 3D</title>
+
+<meta name="description" content="Découvrez mes créations imprimées en 3D : porte-sac, support souris, mini figurines, porte-crayon et support manette.">
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f7fb;
+    color: #111827;
+    line-height: 1.6;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(10, 18, 32, 0.96);
+    backdrop-filter: blur(10px);
+    color: white;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
+
+.navbar {
+    max-width: 1150px;
+    margin: auto;
+    min-height: 72px;
+    padding: 0 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.logo {
+    font-size: 21px;
+    font-weight: 900;
+    letter-spacing: 0.5px;
+}
+
+.logo span {
+    color: #38bdf8;
+}
+
+nav {
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+nav a:hover {
+    color: #38bdf8;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 650px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+    color: white;
+
+    padding: 90px 20px;
+
+    background:
+        radial-gradient(circle at top right, #2563eb 0%, transparent 35%),
+        linear-gradient(135deg, #07111f, #102b52 55%, #0f172a);
+}
+
+.hero-content {
+    max-width: 850px;
+}
+
+.badge {
+    display: inline-block;
+    padding: 8px 16px;
+    border: 1px solid rgba(56,189,248,0.6);
+    border-radius: 50px;
+    color: #7dd3fc;
+    margin-bottom: 22px;
+    font-weight: bold;
+}
+
+.hero h1 {
+    font-size: clamp(42px, 8vw, 76px);
+    line-height: 1.05;
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    color: #38bdf8;
+}
+
+.hero p {
+    max-width: 680px;
+    margin: auto;
+    color: #dbeafe;
+    font-size: 19px;
+}
+
+.hero-buttons {
+    margin-top: 35px;
+
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-block;
+    padding: 14px 24px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.btn-primary {
+    background: #38bdf8;
+    color: #06111f;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    background: #7dd3fc;
+}
+
+.btn-secondary {
+    border: 1px solid rgba(255,255,255,0.3);
+    color: white;
+}
+
+.btn-secondary:hover {
+    background: rgba(255,255,255,0.1);
+}
+
+/* =========================
+   SECTIONS
+========================= */
+
+section {
+    max-width: 1150px;
+    margin: auto;
+    padding: 80px 20px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 38px;
+    margin-bottom: 10px;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: #64748b;
+    margin-bottom: 45px;
+}
+
+/* =========================
+   PRODUCTS
+========================= */
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.product {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+
+    box-shadow: 0 10px 35px rgba(15,23,42,0.09);
+
+    transition: 0.25s;
+}
+
+.product:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 18px 40px rgba(15,23,42,0.15);
+}
+
+.product-image {
+    width: 100%;
+    height: 270px;
+    object-fit: cover;
+    display: block;
+    background: #e5e7eb;
+}
+
+.placeholder {
+    width: 100%;
+    height: 270px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 75px;
+
+    background:
+        linear-gradient(135deg,#e0f2fe,#eff6ff);
+}
+
+.product-content {
+    padding: 23px;
+}
+
+.product-content h3 {
+    font-size: 23px;
+    margin-bottom: 8px;
+}
+
+.product-description {
+    color: #64748b;
+    min-height: 50px;
+}
+
+.product-bottom {
+    margin-top: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.price {
+    font-size: 25px;
+    font-weight: 900;
+}
+
+.order {
+    background: #0f172a;
+    color: white;
+    text-decoration: none;
+
+    padding: 11px 16px;
+    border-radius: 10px;
+
+    font-weight: bold;
+
+    transition: 0.2s;
+}
+
+.order:hover {
+    background: #2563eb;
+}
+
+/* =========================
+   ADVANTAGES
+========================= */
+
+.advantages {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 20px;
+}
+
+.advantage {
+    background: white;
+    padding: 28px 20px;
+    text-align: center;
+
+    border-radius: 18px;
+
+    box-shadow: 0 8px 25px rgba(15,23,42,0.07);
+}
+
+.advantage-icon {
+    font-size: 40px;
+    margin-bottom: 12px;
+}
+
+.advantage h3 {
+    margin-bottom: 8px;
+}
+
+.advantage p {
+    color: #64748b;
+    font-size: 14px;
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact-section {
+    max-width: 1000px;
+}
+
+.contact-box {
+    background:
+        radial-gradient(circle at top right, #2563eb, transparent 35%),
+        #0f172a;
+
+    color: white;
+
+    padding: 60px 25px;
+    border-radius: 25px;
+
+    text-align: center;
+
+    box-shadow: 0 20px 50px rgba(15,23,42,0.18);
+}
+
+.contact-box h2 {
+    font-size: 36px;
+    margin-bottom: 12px;
+}
+
+.contact-box p {
+    color: #cbd5e1;
+    margin-bottom: 28px;
+}
+
+.email {
+    display: block;
+    color: #7dd3fc;
+    margin-top: 18px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background: #070d18;
+    color: #94a3b8;
+
+    text-align: center;
+
+    padding: 35px 20px;
+}
+
+footer strong {
+    color: white;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 900px) {
+
+    .products {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .advantages {
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@media (max-width: 600px) {
+
+    .navbar {
+        flex-direction: column;
+        padding: 18px 15px;
+    }
+
+    nav {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    nav a {
+        font-size: 14px;
+    }
+
+    .hero {
+        min-height: 570px;
+        padding: 70px 20px;
+    }
+
+    .hero h1 {
+        font-size: 46px;
+    }
+
+    .hero p {
+        font-size: 17px;
+    }
+
+    section {
+        padding: 60px 15px;
+    }
+
+    .section-title {
+        font-size: 32px;
+    }
+
+    .products {
+        grid-template-columns: 1fr;
+    }
+
+    .advantages {
+        grid-template-columns: 1fr;
+    }
+
+    .product-image,
+    .placeholder {
+        height: 250px;
+    }
+
+    .contact-box h2 {
+        font-size: 29px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header>
+
+<div class="navbar">
+
+<div class="logo">
+🖨️ CRÉATIONS <span>3D</span>
+</div>
+
+<nav>
+<a href="#boutique">Boutique</a>
+<a href="#avantages">Pourquoi nous ?</a>
+<a href="#contact">Contact</a>
+</nav>
+
+</div>
+
+</header>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<div class="hero">
+
+<div class="hero-content">
+
+<div class="badge">
+✨ Créations imprimées en 3D
+</div>
+
+<h1>
+Des objets <span>uniques</span><br>
+créés en 3D
+</h1>
+
+<p>
+Découvrez une sélection de créations pratiques,
+originales et imprimées en 3D avec soin.
+</p>
+
+<div class="hero-buttons">
+
+<a href="#boutique" class="btn btn-primary">
+🛍️ Voir la boutique
+</a>
+
+<a href="#contact" class="btn btn-secondary">
+📩 Me contacter
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- =========================
+     BOUTIQUE
+========================= -->
+
+<section id="boutique">
+
+<h2 class="section-title">
+🛍️ La boutique
+</h2>
+
+<p class="section-subtitle">
+Découvrez nos créations disponibles.
+</p>
+
+
+<div class="products">
+
+
+<!-- PORTE-SAC -->
+
+<div class="product">
+
+<img
+src="porte-sac.jpg"
+alt="Porte-sac mural 3D"
+class="product-image"
+>
+
+<div class="product-content">
+
+<h3>🪝 Porte-sac</h3>
+
+<p class="product-description">
+Un porte-sac mural pratique, compact et fabriqué en impression 3D.
+</p>
+
+<div class="product-bottom">
+
+<div class="price">5 €</div>
+
+<a
+class="order"
+href="mailto:mateo.toms@icloud.com?subject=Commande%20-%20Porte-sac"
+>
+Commander
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- SUPPORT SOURIS -->
+
+<div class="product">
+
+<img
+src="support-souris.jpg"
+alt="Support souris 3D"
+class="product-image"
+>
+
+<div class="product-content">
+
+<h3>🖱️ Rangement pour souris</h3>
+
+<p class="product-description">
+Un rangement compact pour garder ta souris facilement accessible.
+</p>
+
+<div class="product-bottom">
+
+<div class="price">10 €</div>
+
+<a
+class="order"
+href="mailto:mateo.toms@icloud.com?subject=Commande%20-%20Support%20souris"
+>
+Commander
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- MINI FIGURINE -->
+
+<div class="product">
+
+<img
+src="mini-figurine.jpg"
+alt="Mini figurine lapin 3D"
+class="product-image"
+>
+
+<div class="product-content">
+
+<h3>🐰 Mini figurine</h3>
+
+<p class="product-description">
+Une petite figurine décorative imprimée en 3D.
+</p>
+
+<div class="product-bottom">
+
+<div class="price">5 €</div>
+
+<a
+class="order"
+href="mailto:mateo.toms@icloud.com?subject=Commande%20-%20Mini%20figurine"
+>
+Commander
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- PORTE-CRAYON -->
+
+<div class="product">
+
+<div class="placeholder">
+🖊️
+</div>
+
+<div class="product-content">
+
+<h3>🖊️ Porte-crayon</h3>
+
+<p class="product-description">
+Un rangement pratique et moderne pour tes crayons et stylos.
+</p>
+
+<div class="product-bottom">
+
+<div class="price">8 €</div>
+
+<a
+class="order"
+href="mailto:mateo.toms@icloud.com?subject=Commande%20-%20Porte-crayon"
+>
+Commander
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- SUPPORT MANETTE -->
+
+<div class="product">
+
+<div class="placeholder">
+🎮
+</div>
+
+<div class="product-content">
+
+<h3>🎮 Support manette</h3>
+
+<p class="product-description">
+Un support pratique pour ranger et exposer ta manette.
+</p>
+
+<div class="product-bottom">
+
+<div class="price">10 €</div>
+
+<a
+class="order"
+href="mailto:mateo.toms@icloud.com?subject=Commande%20-%20Support%20manette"
+>
+Commander
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     AVANTAGES
+========================= -->
+
+<section id="avantages">
+
+<h2 class="section-title">
+✨ Pourquoi choisir nos créations ?
+</h2>
+
+<p class="section-subtitle">
+Des objets utiles, originaux et fabriqués en impression 3D.
+</p>
+
+
+<div class="advantages">
+
+<div class="advantage">
+
+<div class="advantage-icon">🖨️</div>
+
+<h3>Impression 3D</h3>
+
+<p>
+Chaque produit est fabriqué grâce à l'impression 3D.
+</p>
+
+</div>
+
+
+<div class="advantage">
+
+<div class="advantage-icon">🎨</div>
+
+<h3>Plusieurs couleurs</h3>
+
+<p>
+Les couleurs disponibles peuvent varier selon les modèles.
+</p>
+
+</div>
+
+
+<div class="advantage">
+
+<div class="advantage-icon">✨</div>
+
+<h3>Créations originales</h3>
+
+<p>
+Des objets pratiques et décoratifs pour le quotidien.
+</p>
+
+</div>
+
+
+<div class="advantage">
+
+<div class="advantage-icon">📦</div>
+
+<h3>Fabriqué à la demande</h3>
+
+<p>
+Les créations peuvent être préparées selon les commandes.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section id="contact" class="contact-section">
+
+<div class="contact-box">
+
+<h2>
+📩 Une création t'intéresse ?
+</h2>
+
+<p>
+Pour commander ou obtenir des informations,
+contacte-nous par e-mail.
+</p>
+
+<a
+class="btn btn-primary"
+href="mailto:mateo.toms@icloud.com"
+>
+📩 Envoyer un e-mail
+</a>
+
+<a
+class="email"
+href="mailto:mateo.toms@icloud.com"
+>
+mateo.toms@icloud.com
+</a>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+<p>
+<strong>🖨️ CRÉATIONS 3D</strong>
+</p>
+
+<p>
+Créations imprimées en 3D
+</p>
+
+<p>
+© 2026 — Tous droits réservés
+</p>
+
+</footer>
+
+
+</body>
+</html>
